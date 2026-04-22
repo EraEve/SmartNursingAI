@@ -119,7 +119,7 @@
                 successMsg.classList.remove('hidden');
                 successMsg.innerHTML = mode === 'emailjs'
                     ? '<i class="fas fa-check-circle mr-1"></i> 邮件已成功送达项目负责人，我们将尽快与您联系！'
-                    : '<i class="fas fa-check-circle mr-1"></i> 已调起默认邮件客户端，请确认后发送到官方邮箱。';
+                    : '<i class="fas fa-check-circle mr-1"></i> 已跳转到 Gmail 写信页面，请在 Gmail 中确认后发送。';
                 form.reset();
             } catch (error) {
                 console.error('Contact form delivery failed:', error);
@@ -182,6 +182,51 @@
         }
         .team-card:hover .avatar-img {
             filter: grayscale(0%) contrast(1);
+        }
+
+        .team-grid {
+            grid-auto-rows: 1fr;
+            align-items: stretch;
+        }
+        .team-card,
+        .team-support-card {
+            position: relative;
+            min-height: 100%;
+            overflow: hidden;
+            isolation: isolate;
+            transform: translateZ(0);
+            backface-visibility: hidden;
+            contain: layout paint;
+        }
+        .layout-refresh {
+            transform: translateZ(0);
+        }
+
+        @media (max-width: 1279px) {
+            .social-layout {
+                grid-template-columns: minmax(0, 1fr) !important;
+            }
+            .team-grid {
+                grid-template-columns: none !important;
+                grid-auto-flow: column;
+                grid-auto-columns: 220px;
+                overflow-x: auto;
+                overscroll-behavior-x: contain;
+                scroll-snap-type: x proximity;
+                -webkit-overflow-scrolling: touch;
+                padding-bottom: 0.75rem;
+            }
+            .team-card {
+                scroll-snap-align: start;
+            }
+            .team-support-grid {
+                grid-template-columns: minmax(0, 1fr) !important;
+            }
+        }
+        @media (max-width: 767px) {
+            .team-grid {
+                grid-auto-columns: minmax(200px, 78vw);
+            }
         }
 
         ::-webkit-scrollbar { width: 6px; }
@@ -933,7 +978,7 @@
 
     <section id="social" class="py-32 bg-[#050A15] relative reveal overflow-hidden">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="grid lg:grid-cols-2 gap-16 items-center social-layout">
                 <div>
                     <span class="text-primary font-bold tracking-[0.5em] text-xs uppercase block mb-4 font-tech">Tech for Good</span>
                     <h2 class="text-4xl md:text-5xl font-black text-white mb-6 leading-snug">科技向善，<br><span class="text-gradient">践行青年社会使命</span></h2>
@@ -1019,7 +1064,7 @@
                 <p class="text-slate-400 mt-6 max-w-2xl mx-auto">以计算机科学为主轴，深度融合临床医学、商业精算与设计交互，覆盖产品研发的每一块全流程版图。</p>
             </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-20">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-20 team-grid">
                 
                 <div class="glass-card p-6 rounded-[2rem] text-center border-t-2 border-primary team-card cursor-default">
                     <div class="w-24 h-24 mx-auto rounded-full bg-gradient-to-tr from-primary to-accent p-1 mb-4 avatar-3d-wrapper">
@@ -1122,8 +1167,8 @@
                 </div>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-10">
-                <div class="glass-card p-10 rounded-[3rem] flex items-center gap-8 group hover:border-primary/50 transition-colors">
+            <div class="grid md:grid-cols-2 gap-10 items-stretch team-support-grid">
+                <div class="glass-card p-10 rounded-[3rem] flex items-center gap-8 group hover:border-primary/50 transition-colors team-support-card">
                     <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center shrink-0 border border-primary/20">
                         <i class="fas fa-chalkboard-teacher text-3xl text-primary"></i>
                     </div>
@@ -1132,7 +1177,7 @@
                         <p class="text-xs text-slate-400 leading-relaxed">山东财经大学计算机与人工智能学院。研究方向：跨模态信息检索、大数据挖掘。发表 SCI/EI 30余篇，为算法底层创新提供极强背书。</p>
                     </div>
                 </div>
-                <div class="glass-card p-10 rounded-[3rem] flex items-center gap-8 group hover:border-accent/50 transition-colors">
+                <div class="glass-card p-10 rounded-[3rem] flex items-center gap-8 group hover:border-accent/50 transition-colors team-support-card">
                     <div class="w-20 h-20 bg-accent/10 rounded-full flex items-center justify-center shrink-0 border border-accent/20">
                         <i class="fas fa-user-graduate text-3xl text-accent"></i>
                     </div>
@@ -1321,7 +1366,7 @@
                     <div class="border border-dashed border-white/20 rounded-xl p-4 text-center cursor-not-allowed opacity-60 hover:bg-white/5 transition-colors">
                         <i class="fas fa-cloud-upload-alt text-xl text-slate-400 mb-2"></i>
                         <p class="text-[10px] text-slate-400">补充材料附件请直接发送至 <span class="text-primary font-tech">yuanjiegu52@gmail.com</span></p>
-                        <p class="text-[10px] text-slate-500 mt-2">GitHub Pages 静态托管默认会调起访客本机邮件客户端；若后续补充 EmailJS 配置，可直接站内投递。</p>
+                        <p class="text-[10px] text-slate-500 mt-2">未配置 EmailJS 时，提交表单将直接跳转到 Gmail 写信页面；若未登录 Gmail，需要先完成 Google 账号登录。</p>
                     </div>
                     
                     <button type="submit" id="submit-btn" class="w-full py-4 bg-gradient-to-r from-primary to-accent text-darkbg font-black rounded-2xl hover:shadow-[0_0_30px_rgba(0,229,255,0.4)] hover:scale-[1.02] transition-all flex items-center justify-center gap-3">
@@ -1529,6 +1574,8 @@
             spaceBetween: 30,
             centeredSlides: true,
             loop: true,
+            observer: true,
+            observeParents: true,
             autoplay: {
                 delay: 3500,
                 disableOnInteraction: false,
@@ -1541,6 +1588,24 @@
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
             },
+        });
+
+        let resizeTimer;
+        function refreshResponsiveSections() {
+            swiper.update();
+            swiper.updateSize();
+            swiper.updateSlides();
+            const teamSection = document.getElementById('team');
+            if (!teamSection) return;
+            teamSection.classList.add('layout-refresh');
+            void teamSection.offsetHeight;
+            requestAnimationFrame(() => teamSection.classList.remove('layout-refresh'));
+        }
+
+        window.addEventListener('load', refreshResponsiveSections);
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(refreshResponsiveSections, 120);
         });
 
         /* ---------------------------------
@@ -1597,7 +1662,7 @@
             emailjs.init(APP_CONFIG.emailjs.publicKey);
         }
 
-        function buildMailtoLinkOverride(formData) {
+        function buildGmailComposeLinkOverride(formData) {
             const name = (formData.get('user_name') || '').trim() || '未填写姓名';
             const organization = (formData.get('user_org') || '').trim() || '未填写单位';
             const title = (formData.get('user_title') || '').trim() || '未填写职务';
@@ -1618,7 +1683,7 @@
                 message
             ].join('\n');
 
-            return `mailto:${APP_CONFIG.officialEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            return `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(APP_CONFIG.officialEmail)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         }
 
         async function sendContactFormOverride(form) {
@@ -1633,8 +1698,12 @@
                 return 'emailjs';
             }
 
-            window.location.href = buildMailtoLinkOverride(formData);
-            return 'mailto';
+            const gmailComposeUrl = buildGmailComposeLinkOverride(formData);
+            const gmailWindow = window.open(gmailComposeUrl, '_blank', 'noopener,noreferrer');
+            if (!gmailWindow) {
+                throw new Error('Gmail compose popup blocked');
+            }
+            return 'gmail';
         }
 
         document.getElementById('contactForm').addEventListener('submit', async function(event) {
@@ -1660,13 +1729,13 @@
                 successMsg.classList.remove('hidden');
                 successMsg.innerHTML = mode === 'emailjs'
                     ? '<i class="fas fa-check-circle mr-1"></i> 邮件已成功送达项目负责人，我们将尽快与您联系！'
-                    : '<i class="fas fa-check-circle mr-1"></i> 已调起默认邮件客户端，请确认后发送到官方邮箱。';
+                    : '<i class="fas fa-check-circle mr-1"></i> 已在新标签页打开 Gmail 写信页面，请在 Gmail 中确认后发送。';
                 form.reset();
             } catch (error) {
                 console.error('Contact form delivery failed:', error);
                 overlay.classList.add('hidden');
                 errorMsg.classList.remove('hidden');
-                errorMsg.innerHTML = `<i class="fas fa-exclamation-circle mr-1"></i> 自动发送失败，请直接联系 <a href="mailto:${APP_CONFIG.officialEmail}" class="underline">${APP_CONFIG.officialEmail}</a>。`;
+                errorMsg.innerHTML = `<i class="fas fa-exclamation-circle mr-1"></i> 未能在新标签页打开 Gmail，请允许浏览器弹窗后重试，或直接联系 <a href="mailto:${APP_CONFIG.officialEmail}" class="underline">${APP_CONFIG.officialEmail}</a>。`;
             } finally {
                 btn.disabled = false;
                 btn.innerHTML = originalText;
