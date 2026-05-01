@@ -266,14 +266,18 @@
 
     <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-primary via-accent to-secondary z-[100] transition-all duration-100" style="width: 0%"></div>
 
-    <div class="fixed right-6 top-1/2 -translate-y-1/2 z-[90] hidden xl:flex flex-col gap-6 p-4 rounded-full bg-white/5 backdrop-blur-md border border-white/10">
+    <div class="fixed right-6 top-1/2 -translate-y-1/2 z-[90] hidden xl:flex flex-col gap-4 p-3 rounded-full bg-white/5 backdrop-blur-md border border-white/10">
         <a href="#home" class="side-nav-link" title="项目首页"><div class="side-nav-dot active"></div></a>
         <a href="#crisis" class="side-nav-link" title="社会痛点"><div class="side-nav-dot"></div></a>
+        <a href="#pest" class="side-nav-link" title="环境分析"><div class="side-nav-dot"></div></a>
         <a href="#tech" class="side-nav-link" title="算法底座"><div class="side-nav-dot"></div></a>
         <a href="#mapfm-diagram" class="side-nav-link" title="技术架构"><div class="side-nav-dot"></div></a>
+        <a href="#future-tech" class="side-nav-link" title="技术创新"><div class="side-nav-dot"></div></a>
         <a href="#advantage" class="side-nav-link" title="竞争优势"><div class="side-nav-dot"></div></a>
         <a href="#product" class="side-nav-link" title="产品矩阵"><div class="side-nav-dot"></div></a>
+        <a href="#disease" class="side-nav-link" title="疾病预测"><div class="side-nav-dot"></div></a>
         <a href="#validation" class="side-nav-link" title="临床验证"><div class="side-nav-dot"></div></a>
+        <a href="#brand" class="side-nav-link" title="品牌传播"><div class="side-nav-dot"></div></a>
         <a href="#business" class="side-nav-link" title="商业画布"><div class="side-nav-dot"></div></a>
         <a href="#finance" class="side-nav-link" title="财务融资"><div class="side-nav-dot"></div></a>
         <a href="#roadmap" class="side-nav-link" title="发展蓝图"><div class="side-nav-dot"></div></a>
@@ -298,6 +302,7 @@
             <div class="hidden lg:flex items-center gap-8">
                 <div class="flex gap-6 text-xs font-bold tracking-widest">
                     <a href="#crisis" class="hover:text-primary transition-colors">社会痛点</a>
+                    <a href="#pest" class="hover:text-primary transition-colors">环境分析</a>
                     <a href="#tech" class="hover:text-primary transition-colors">算法底座</a>
                     <a href="#product" class="hover:text-primary transition-colors">全场景矩阵</a>
                     <a href="#business" class="hover:text-primary transition-colors">商业模式</a>
@@ -423,29 +428,119 @@
             </div>
 
             <div class="mt-20 p-10 glass-card rounded-[3rem] border border-primary/20 bg-primary/5">
-                <h3 class="text-xl font-bold text-white mb-8 flex items-center gap-3"><i class="fas fa-id-card-clip text-primary"></i> 核心用户画像与痛点诉求匹配</h3>
+                <h3 class="text-xl font-bold text-white mb-8 flex items-center gap-3"><i class="fas fa-id-card-clip text-primary"></i> 目标客户层级剖析（SAB 三级精准定位）</h3>
                 <div class="grid md:grid-cols-3 gap-8">
-                    <div>
-                        <div class="text-primary font-bold mb-2 text-lg">B端：公立/康养机构</div>
+                    <div class="glass-card p-6 rounded-2xl border-l-4 border-primary hover:bg-primary/5 transition-colors">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="px-3 py-1 bg-primary/20 text-primary text-xs font-black rounded-full tracking-widest">S 级</span>
+                            <span class="text-white font-bold text-sm">核心客户 · 优先级最高</span>
+                        </div>
+                        <div class="text-primary font-bold mb-3 text-lg">三甲/二级公立 · 高端康养</div>
                         <ul class="text-sm text-slate-400 space-y-2 list-disc pl-5 marker:text-primary">
-                            <li><span class="text-white">核心诉求：</span>填补护工缺口，落实政策</li>
-                            <li><span class="text-white">现有痛点：</span>纠纷率高 (18%)，培训成本高</li>
+                            <li><span class="text-white">核心诉求：</span>落实免陪政策、填补护工缺口、降低纠纷</li>
+                            <li><span class="text-white">解决方案：</span>全功能定制版 + 专属运维 + HIS 无缝对接</li>
                         </ul>
                     </div>
-                    <div>
-                        <div class="text-secondary font-bold mb-2 text-lg">B端：护士与护理员</div>
+                    <div class="glass-card p-6 rounded-2xl border-l-4 border-secondary hover:bg-secondary/5 transition-colors">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="px-3 py-1 bg-secondary/20 text-secondary text-xs font-black rounded-full tracking-widest">A 级</span>
+                            <span class="text-white font-bold text-sm">延伸客户 · 重点拓展</span>
+                        </div>
+                        <div class="text-secondary font-bold mb-3 text-lg">社区卫生 · 公办养老</div>
                         <ul class="text-sm text-slate-400 space-y-2 list-disc pl-5 marker:text-secondary">
-                            <li><span class="text-white">核心诉求：</span>减负增效，避免医疗差错</li>
-                            <li><span class="text-white">现有痛点：</span>文书挤占时间 (占40%)，工作过载</li>
+                            <li><span class="text-white">核心诉求：</span>低成本标准化照护、基础监测、政策合规</li>
+                            <li><span class="text-white">解决方案：</span>轻量化标准版 + 租赁服务 + 简化运维</li>
                         </ul>
                     </div>
-                    <div>
-                        <div class="text-accent font-bold mb-2 text-lg">C端：患者及其家属</div>
+                    <div class="glass-card p-6 rounded-2xl border-l-4 border-accent hover:bg-accent/5 transition-colors">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="px-3 py-1 bg-accent/20 text-accent text-xs font-black rounded-full tracking-widest">B 级</span>
+                            <span class="text-white font-bold text-sm">潜在客户 · 长期布局</span>
+                        </div>
+                        <div class="text-accent font-bold mb-3 text-lg">居家照护 · 技术授权</div>
                         <ul class="text-sm text-slate-400 space-y-2 list-disc pl-5 marker:text-accent">
-                            <li><span class="text-white">核心诉求：</span>全时段安全保障，降低开支</li>
-                            <li><span class="text-white">现有痛点：</span>经济压力大，缺乏安全感</li>
+                            <li><span class="text-white">核心诉求：</span>家用便携照护、API 接口、数据服务</li>
+                            <li><span class="text-white">解决方案：</span>家用迷你版 + SDK 授权 + 联邦学习</li>
                         </ul>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pest" class="py-32 tech-grid relative reveal overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <span class="text-primary font-bold tracking-[0.5em] text-xs uppercase block mb-4 font-tech">Environment Analysis</span>
+                <h2 class="text-4xl md:text-5xl font-black text-white mb-6">专业环境模型 <span class="text-gradient">PEST + SWOT</span></h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
+            </div>
+
+            <h3 class="text-2xl font-bold text-white mb-10 flex items-center gap-3"><i class="fas fa-globe text-primary"></i> 宏观环境分析（PEST 模型）</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+                <div class="glass-card p-8 rounded-3xl border-t-4 border-primary group hover:border-primary transition-colors relative overflow-hidden">
+                    <div class="absolute -right-4 -top-4 text-7xl font-black text-white/[0.03] group-hover:text-primary/10 transition-colors font-tech">P</div>
+                    <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary text-xl mb-6 group-hover:bg-primary group-hover:text-darkbg transition-all">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h4 class="text-white font-bold mb-3 text-lg">政治环境</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">国家重点扶持医疗机器人产业，山东强制推进免陪照护落地，专项研发补贴、产业奖补政策全覆盖。</p>
+                </div>
+                <div class="glass-card p-8 rounded-3xl border-t-4 border-secondary group hover:border-secondary transition-colors relative overflow-hidden">
+                    <div class="absolute -right-4 -top-4 text-7xl font-black text-white/[0.03] group-hover:text-secondary/10 transition-colors font-tech">E</div>
+                    <div class="w-14 h-14 bg-secondary/10 rounded-2xl flex items-center justify-center text-secondary text-xl mb-6 group-hover:bg-secondary group-hover:text-darkbg transition-all">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h4 class="text-white font-bold mb-3 text-lg">经济环境</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">老龄化刚需爆发，市场支付能力强劲，机器人替代人工实现降本增效，经济替代价值显著。</p>
+                </div>
+                <div class="glass-card p-8 rounded-3xl border-t-4 border-accent group hover:border-accent transition-colors relative overflow-hidden">
+                    <div class="absolute -right-4 -top-4 text-7xl font-black text-white/[0.03] group-hover:text-accent/10 transition-colors font-tech">S</div>
+                    <div class="w-14 h-14 bg-accent/10 rounded-2xl flex items-center justify-center text-accent text-xl mb-6 group-hover:bg-accent group-hover:text-white transition-all">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h4 class="text-white font-bold mb-3 text-lg">社会环境</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">护工供需比 1:8.3，人力缺口巨大，智能照护接受度持续提升，需求升级趋势明确。</p>
+                </div>
+                <div class="glass-card p-8 rounded-3xl border-t-4 border-yellow-500 group hover:border-yellow-500 transition-colors relative overflow-hidden">
+                    <div class="absolute -right-4 -top-4 text-7xl font-black text-white/[0.03] group-hover:text-yellow-500/10 transition-colors font-tech">T</div>
+                    <div class="w-14 h-14 bg-yellow-500/10 rounded-2xl flex items-center justify-center text-yellow-500 text-xl mb-6 group-hover:bg-yellow-500 group-hover:text-darkbg transition-all">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h4 class="text-white font-bold mb-3 text-lg">技术环境</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">AI 医疗算法成熟，硬件国产化量产，成本低、性能稳，技术完全支撑临床落地。</p>
+                </div>
+            </div>
+
+            <h3 class="text-2xl font-bold text-white mb-10 flex items-center gap-3"><i class="fas fa-chess-board text-accent"></i> 战略格局分析（SWOT 模型）</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="glass-card p-8 rounded-3xl border-l-4 border-primary group hover:bg-primary/5 transition-colors">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="px-3 py-1.5 bg-primary/20 text-primary text-xs font-black rounded-lg tracking-widest uppercase">Strengths</span>
+                        <span class="text-white font-bold">核心优势</span>
+                    </div>
+                    <p class="text-sm text-slate-400 leading-relaxed">技术硬核、场景精准、高性价比、跨学科复合团队。自研 MAPFM 算法准确率 81.95%，专为医疗场景优化。</p>
+                </div>
+                <div class="glass-card p-8 rounded-3xl border-l-4 border-yellow-500 group hover:bg-yellow-500/5 transition-colors">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="px-3 py-1.5 bg-yellow-500/20 text-yellow-500 text-xs font-black rounded-lg tracking-widest uppercase">Weaknesses</span>
+                        <span class="text-white font-bold">待突破项</span>
+                    </div>
+                    <p class="text-sm text-slate-400 leading-relaxed">品牌新启、医械注册周期长、资金有限、供应链待完善。需加速二类器械注册认证流程。</p>
+                </div>
+                <div class="glass-card p-8 rounded-3xl border-l-4 border-secondary group hover:bg-secondary/5 transition-colors">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="px-3 py-1.5 bg-secondary/20 text-secondary text-xs font-black rounded-lg tracking-widest uppercase">Opportunities</span>
+                        <span class="text-white font-bold">战略机遇</span>
+                    </div>
+                    <p class="text-sm text-slate-400 leading-relaxed">免陪照护政策红利、市场蓝海渗透率低、技术降本、大学生创业扶持。CAGR 高达 14.2%。</p>
+                </div>
+                <div class="glass-card p-8 rounded-3xl border-l-4 border-danger group hover:bg-danger/5 transition-colors">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="px-3 py-1.5 bg-danger/20 text-danger text-xs font-black rounded-lg tracking-widest uppercase">Threats</span>
+                        <span class="text-white font-bold">潜在威胁</span>
+                    </div>
+                    <p class="text-sm text-slate-400 leading-relaxed">巨头降维竞争、监管合规严格、供应链波动、技术易被模仿。通过深耕区域护城河有效对冲。</p>
                 </div>
             </div>
         </div>
@@ -542,6 +637,108 @@
         </div>
     </section>
 
+    <section id="future-tech" class="py-32 bg-darkbg relative reveal">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <span class="text-accent font-bold tracking-[0.5em] text-xs uppercase block mb-4 font-tech">Technology Frontier</span>
+                <h2 class="text-4xl md:text-5xl font-black text-white mb-6">前沿技术缺口与 <span class="text-accent italic">未来核心创新</span></h2>
+                <div class="w-24 h-1 bg-accent mx-auto rounded-full"></div>
+            </div>
+
+            <h3 class="text-2xl font-bold text-white mb-10 flex items-center gap-3"><i class="fas fa-exclamation-triangle text-yellow-500"></i> 六大前沿技术缺口 + 升级方案</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
+                <div class="glass-card p-6 rounded-3xl group hover:border-primary/40 transition-colors">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs font-tech font-bold text-primary bg-primary/10 px-3 py-1 rounded-lg">01</span>
+                        <h4 class="text-white font-bold text-sm">Transformer 医疗化不足</h4>
+                    </div>
+                    <p class="text-xs text-slate-500 mb-3"><i class="fas fa-times-circle text-danger mr-1"></i>现状：仅简单复用多头自注意力，跨模态融合粗糙</p>
+                    <p class="text-xs text-slate-300"><i class="fas fa-check-circle text-primary mr-1"></i>方案：嵌入 MK-Transformer，跨模态对齐+边缘量化，推理延迟 ≤100ms</p>
+                </div>
+                <div class="glass-card p-6 rounded-3xl group hover:border-accent/40 transition-colors">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs font-tech font-bold text-accent bg-accent/10 px-3 py-1 rounded-lg">02</span>
+                        <h4 class="text-white font-bold text-sm">多智能体无 Skill 解耦</h4>
+                    </div>
+                    <p class="text-xs text-slate-500 mb-3"><i class="fas fa-times-circle text-danger mr-1"></i>现状：双智能体协同固定，无技能拆解复用</p>
+                    <p class="text-xs text-slate-300"><i class="fas fa-check-circle text-primary mr-1"></i>方案：五智能体架构+技能模块化+反思迭代，适配复杂临床</p>
+                </div>
+                <div class="glass-card p-6 rounded-3xl group hover:border-secondary/40 transition-colors">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs font-tech font-bold text-secondary bg-secondary/10 px-3 py-1 rounded-lg">03</span>
+                        <h4 class="text-white font-bold text-sm">多模态缺失时序信号</h4>
+                    </div>
+                    <p class="text-xs text-slate-500 mb-3"><i class="fas fa-times-circle text-danger mr-1"></i>现状：无生理时序数据，无生成补全能力</p>
+                    <p class="text-xs text-slate-300"><i class="fas fa-check-circle text-primary mr-1"></i>方案：StochDiff 时序扩散模块，生理信号预测+罕见病数据生成</p>
+                </div>
+                <div class="glass-card p-6 rounded-3xl group hover:border-yellow-500/40 transition-colors">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs font-tech font-bold text-yellow-500 bg-yellow-500/10 px-3 py-1 rounded-lg">04</span>
+                        <h4 class="text-white font-bold text-sm">无 Tool Learning + MCP</h4>
+                    </div>
+                    <p class="text-xs text-slate-500 mb-3"><i class="fas fa-times-circle text-danger mr-1"></i>现状：无法调用医疗专业工具</p>
+                    <p class="text-xs text-slate-300"><i class="fas fa-check-circle text-primary mr-1"></i>方案：自主调用 HIS/LIS/PACS，MCP 标准化对接</p>
+                </div>
+                <div class="glass-card p-6 rounded-3xl group hover:border-red-500/40 transition-colors">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs font-tech font-bold text-red-500 bg-red-500/10 px-3 py-1 rounded-lg">05</span>
+                        <h4 class="text-white font-bold text-sm">具身智能缺失</h4>
+                    </div>
+                    <p class="text-xs text-slate-500 mb-3"><i class="fas fa-times-circle text-danger mr-1"></i>现状：机器人无自主交互、情感感知</p>
+                    <p class="text-xs text-slate-300"><i class="fas fa-check-circle text-primary mr-1"></i>方案：世界模型+柔性操作+情感识别，适配老年人文关怀</p>
+                </div>
+                <div class="glass-card p-6 rounded-3xl group hover:border-primary/40 transition-colors">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs font-tech font-bold text-primary bg-primary/10 px-3 py-1 rounded-lg">06</span>
+                        <h4 class="text-white font-bold text-sm">可解释性黑箱</h4>
+                    </div>
+                    <p class="text-xs text-slate-500 mb-3"><i class="fas fa-times-circle text-danger mr-1"></i>现状：AI 决策无归因，不合规</p>
+                    <p class="text-xs text-slate-300"><i class="fas fa-check-circle text-primary mr-1"></i>方案：决策归因+三级人机干预+全流程追溯</p>
+                </div>
+            </div>
+
+            <h3 class="text-2xl font-bold text-white mb-10 flex items-center gap-3"><i class="fas fa-atom text-primary animate-spin" style="animation-duration:8s"></i> 四大类核心技术创新</h3>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="glass-card p-8 rounded-[2rem] border-l-4 border-primary relative overflow-hidden">
+                    <div class="absolute -right-8 -top-8 text-[6rem] font-black text-white/[0.03] font-tech">I</div>
+                    <h4 class="text-lg font-bold text-white mb-4 flex items-center gap-3"><i class="fas fa-brain text-primary"></i> MAPFM 多智能体框架升级</h4>
+                    <ul class="space-y-3 text-sm text-slate-400">
+                        <li class="flex items-start gap-2"><i class="fas fa-angle-right text-primary mt-1 text-xs"></i>五角色博弈协同 MAPFM 2.0，错误决策拦截率 ≥99%，响应 0.5s</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-angle-right text-primary mt-1 text-xs"></i>知识图谱增强 Adaptive-RAG，精确率升至 <span class="text-primary font-bold">86.7%</span>，罕见病衰减降至 7.8%</li>
+                    </ul>
+                </div>
+                <div class="glass-card p-8 rounded-[2rem] border-l-4 border-accent relative overflow-hidden">
+                    <div class="absolute -right-8 -top-8 text-[6rem] font-black text-white/[0.03] font-tech">II</div>
+                    <h4 class="text-lg font-bold text-white mb-4 flex items-center gap-3"><i class="fas fa-satellite-dish text-accent"></i> 多模态感知与精准预警</h4>
+                    <ul class="space-y-3 text-sm text-slate-400">
+                        <li class="flex items-start gap-2"><i class="fas fa-angle-right text-accent mt-1 text-xs"></i>非接触式多模态生理感知，心率准确率 ≥95%，跌倒预警提前 30 秒</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-angle-right text-accent mt-1 text-xs"></i>时序-空间联合预警，压疮预警提前 <span class="text-accent font-bold">48 小时</span>，准确率 90%</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-angle-right text-accent mt-1 text-xs"></i>小样本罕见病自适应，仅需 10-20 个样本，准确率 ≥80%</li>
+                    </ul>
+                </div>
+                <div class="glass-card p-8 rounded-[2rem] border-l-4 border-secondary relative overflow-hidden">
+                    <div class="absolute -right-8 -top-8 text-[6rem] font-black text-white/[0.03] font-tech">III</div>
+                    <h4 class="text-lg font-bold text-white mb-4 flex items-center gap-3"><i class="fas fa-shield-alt text-secondary"></i> 落地合规保障</h4>
+                    <ul class="space-y-3 text-sm text-slate-400">
+                        <li class="flex items-start gap-2"><i class="fas fa-angle-right text-secondary mt-1 text-xs"></i>端边云协同分层推理，核心预警延迟 0.2s，90% 数据本地处理</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-angle-right text-secondary mt-1 text-xs"></i>医疗大模型轻量化蒸馏，7B 压缩至 1B，推理提速 <span class="text-secondary font-bold">5 倍</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-angle-right text-secondary mt-1 text-xs"></i>横纵混合联邦学习，数据可用不可见，全合规</li>
+                    </ul>
+                </div>
+                <div class="glass-card p-8 rounded-[2rem] border-l-4 border-yellow-500 relative overflow-hidden">
+                    <div class="absolute -right-8 -top-8 text-[6rem] font-black text-white/[0.03] font-tech">IV</div>
+                    <h4 class="text-lg font-bold text-white mb-4 flex items-center gap-3"><i class="fas fa-heart text-yellow-500"></i> 人文体验升级</h4>
+                    <ul class="space-y-3 text-sm text-slate-400">
+                        <li class="flex items-start gap-2"><i class="fas fa-angle-right text-yellow-500 mt-1 text-xs"></i>全流程可解释决策引擎，解决 AI 黑箱问题</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-angle-right text-yellow-500 mt-1 text-xs"></i>护工-AI 动态权限分配，培训时间缩短 50%</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-angle-right text-yellow-500 mt-1 text-xs"></i>适老化多模态交互，方言识别准确率 ≥98%</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-angle-right text-yellow-500 mt-1 text-xs"></i>医疗数字孪生照护沙盘，模拟推演优化流程</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="advantage" class="py-32 bg-darkbg relative reveal">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-20">
@@ -589,6 +786,38 @@
                 </table>
             </div>
             <p class="text-center text-xs text-slate-500 mt-6"><i class="fas fa-info-circle mr-1"></i> 数据来源：项目商业计划书核心竞品对标分析与实验室实测数据</p>
+
+            <h3 class="text-2xl font-bold text-white mb-8 mt-20 text-center">四大核心竞争壁垒</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="glass-card p-6 rounded-3xl text-center border-t-2 border-primary group hover:border-primary/80 transition-colors">
+                    <div class="w-16 h-16 mx-auto bg-primary/10 rounded-full flex items-center justify-center text-primary text-2xl mb-4 group-hover:bg-primary group-hover:text-darkbg transition-all">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h4 class="text-white font-bold mb-2">技术壁垒</h4>
+                    <p class="text-xs text-slate-400">自研 MAPFM 框架 + ACM 论文 + 国家发明专利，核心算法完全自主可控</p>
+                </div>
+                <div class="glass-card p-6 rounded-3xl text-center border-t-2 border-accent group hover:border-accent/80 transition-colors">
+                    <div class="w-16 h-16 mx-auto bg-accent/10 rounded-full flex items-center justify-center text-accent text-2xl mb-4 group-hover:bg-accent group-hover:text-white transition-all">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                    <h4 class="text-white font-bold mb-2">场景壁垒</h4>
+                    <p class="text-xs text-slate-400">5 家医院/康养机构深度绑定，临床数据反哺模型持续进化</p>
+                </div>
+                <div class="glass-card p-6 rounded-3xl text-center border-t-2 border-secondary group hover:border-secondary/80 transition-colors">
+                    <div class="w-16 h-16 mx-auto bg-secondary/10 rounded-full flex items-center justify-center text-secondary text-2xl mb-4 group-hover:bg-secondary group-hover:text-darkbg transition-all">
+                        <i class="fas fa-retweet"></i>
+                    </div>
+                    <h4 class="text-white font-bold mb-2">模式壁垒</h4>
+                    <p class="text-xs text-slate-400">"硬件租赁+SaaS订阅"轻资产模式，快速占领三甲核心院区</p>
+                </div>
+                <div class="glass-card p-6 rounded-3xl text-center border-t-2 border-yellow-500 group hover:border-yellow-500/80 transition-colors">
+                    <div class="w-16 h-16 mx-auto bg-yellow-500/10 rounded-full flex items-center justify-center text-yellow-500 text-2xl mb-4 group-hover:bg-yellow-500 group-hover:text-darkbg transition-all">
+                        <i class="fas fa-piggy-bank"></i>
+                    </div>
+                    <h4 class="text-white font-bold mb-2">成本壁垒</h4>
+                    <p class="text-xs text-slate-400">单院年均节约超 57 万元，极致性价比领跑行业，经济价值显著</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -635,6 +864,93 @@
                     <p class="text-sm text-slate-400 leading-relaxed">大模型自动梳理巡查数据，一键生成符合医疗规范的结构化护理文书。与医院现有的 HIS/EMR 系统无缝协同，将护士从繁重的表单填报中彻底解放出来。</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section id="disease" class="py-32 bg-[#050B1A] relative reveal">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <span class="text-primary font-bold tracking-[0.5em] text-xs uppercase block mb-4 font-tech">Disease Prediction</span>
+                <h2 class="text-4xl md:text-5xl font-black text-white mb-6">MAPFM 可预测 <span class="text-gradient">核心疾病病例</span></h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full mb-8"></div>
+                <p class="text-slate-400 max-w-3xl mx-auto">基于多智能体协同与跨模态数据融合，MAPFM 已覆盖十大高频核心病种，横跨 6 大科室。</p>
+            </div>
+
+            <div class="overflow-x-auto hide-scroll rounded-[2rem] border border-white/10 shadow-2xl bg-white/5">
+                <table class="w-full text-left border-collapse min-w-[600px]">
+                    <thead>
+                        <tr class="bg-white/10 text-white text-sm tracking-wider">
+                            <th class="p-5 font-bold w-16 text-center">序号</th>
+                            <th class="p-5 font-bold">核心疾病类型</th>
+                            <th class="p-5 font-bold">覆盖科室</th>
+                            <th class="p-5 font-bold text-center">预警级别</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm text-slate-300 divide-y divide-white/5">
+                        <tr class="hover:bg-white/5 transition-colors">
+                            <td class="p-5 text-center font-tech text-primary">01</td>
+                            <td class="p-5 font-bold text-white">乳腺癌</td>
+                            <td class="p-5">肿瘤科</td>
+                            <td class="p-5 text-center"><span class="px-2 py-1 bg-danger/20 text-danger text-xs rounded-full font-bold">高危</span></td>
+                        </tr>
+                        <tr class="hover:bg-white/5 transition-colors">
+                            <td class="p-5 text-center font-tech text-primary">02</td>
+                            <td class="p-5 font-bold text-white">肺癌</td>
+                            <td class="p-5">肿瘤科</td>
+                            <td class="p-5 text-center"><span class="px-2 py-1 bg-danger/20 text-danger text-xs rounded-full font-bold">高危</span></td>
+                        </tr>
+                        <tr class="hover:bg-white/5 transition-colors">
+                            <td class="p-5 text-center font-tech text-primary">03</td>
+                            <td class="p-5 font-bold text-white">脑卒中 / 中风</td>
+                            <td class="p-5">神经内科</td>
+                            <td class="p-5 text-center"><span class="px-2 py-1 bg-danger/20 text-danger text-xs rounded-full font-bold">高危</span></td>
+                        </tr>
+                        <tr class="hover:bg-white/5 transition-colors">
+                            <td class="p-5 text-center font-tech text-primary">04</td>
+                            <td class="p-5 font-bold text-white">高血压</td>
+                            <td class="p-5">老年病科</td>
+                            <td class="p-5 text-center"><span class="px-2 py-1 bg-yellow-500/20 text-yellow-500 text-xs rounded-full font-bold">中危</span></td>
+                        </tr>
+                        <tr class="hover:bg-white/5 transition-colors">
+                            <td class="p-5 text-center font-tech text-primary">05</td>
+                            <td class="p-5 font-bold text-white">2 型糖尿病</td>
+                            <td class="p-5">内分泌科</td>
+                            <td class="p-5 text-center"><span class="px-2 py-1 bg-yellow-500/20 text-yellow-500 text-xs rounded-full font-bold">中危</span></td>
+                        </tr>
+                        <tr class="hover:bg-white/5 transition-colors">
+                            <td class="p-5 text-center font-tech text-primary">06</td>
+                            <td class="p-5 font-bold text-white">阿尔茨海默病</td>
+                            <td class="p-5">老年病科</td>
+                            <td class="p-5 text-center"><span class="px-2 py-1 bg-danger/20 text-danger text-xs rounded-full font-bold">高危</span></td>
+                        </tr>
+                        <tr class="hover:bg-white/5 transition-colors">
+                            <td class="p-5 text-center font-tech text-primary">07</td>
+                            <td class="p-5 font-bold text-white">慢性心力衰竭</td>
+                            <td class="p-5">心血管科</td>
+                            <td class="p-5 text-center"><span class="px-2 py-1 bg-danger/20 text-danger text-xs rounded-full font-bold">高危</span></td>
+                        </tr>
+                        <tr class="hover:bg-white/5 transition-colors">
+                            <td class="p-5 text-center font-tech text-primary">08</td>
+                            <td class="p-5 font-bold text-white">帕金森病</td>
+                            <td class="p-5">神经内科</td>
+                            <td class="p-5 text-center"><span class="px-2 py-1 bg-yellow-500/20 text-yellow-500 text-xs rounded-full font-bold">中危</span></td>
+                        </tr>
+                        <tr class="hover:bg-white/5 transition-colors">
+                            <td class="p-5 text-center font-tech text-primary">09</td>
+                            <td class="p-5 font-bold text-white">骨质疏松症</td>
+                            <td class="p-5">康复科</td>
+                            <td class="p-5 text-center"><span class="px-2 py-1 bg-secondary/20 text-secondary text-xs rounded-full font-bold">预防</span></td>
+                        </tr>
+                        <tr class="hover:bg-white/5 transition-colors">
+                            <td class="p-5 text-center font-tech text-primary">10</td>
+                            <td class="p-5 font-bold text-white">慢性阻塞性肺疾病</td>
+                            <td class="p-5">呼吸科</td>
+                            <td class="p-5 text-center"><span class="px-2 py-1 bg-yellow-500/20 text-yellow-500 text-xs rounded-full font-bold">中危</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-center text-xs text-slate-500 mt-6"><i class="fas fa-info-circle mr-1"></i> 基于实验室标注数据与临床试点反馈，覆盖 6 大科室、10 大高频病种</p>
         </div>
     </section>
 
@@ -725,6 +1041,65 @@
         </div>
     </section>
 
+    <section id="brand" class="py-32 tech-grid relative reveal overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <span class="text-primary font-bold tracking-[0.5em] text-xs uppercase block mb-4 font-tech">Brand Matrix</span>
+                <h2 class="text-4xl md:text-5xl font-black text-white mb-6">品牌全域 <span class="text-gradient">传播矩阵</span></h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-10">
+                <div class="glass-card p-10 rounded-[3rem] border-l-4 border-primary">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary text-2xl">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white">专业展会赋能</h3>
+                            <p class="text-xs text-slate-500">线下顶级行业影响力构建</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-slate-400 leading-relaxed">亮相中国国际医疗器械博览会 (CMEF)、医疗康复展、人工智能医疗展等顶级行业展会，现场样机演示、专家宣讲，打造行业标杆影响力。</p>
+                </div>
+
+                <div class="glass-card p-10 rounded-[3rem] border-l-4 border-accent">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-14 h-14 bg-accent/10 rounded-2xl flex items-center justify-center text-accent text-2xl">
+                            <i class="fas fa-globe-asia"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white">线上全媒体宣传矩阵</h3>
+                            <p class="text-xs text-slate-500">全域覆盖精准触达</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-4 bg-white/5 rounded-xl border border-white/5 hover:border-primary/30 transition-colors">
+                            <i class="fab fa-weixin text-primary text-lg mb-2"></i>
+                            <h4 class="text-white font-bold text-sm mb-1">公众号</h4>
+                            <p class="text-[10px] text-slate-500">政策解读 · 试点案例 · 技术干货</p>
+                        </div>
+                        <div class="p-4 bg-white/5 rounded-xl border border-white/5 hover:border-red-500/30 transition-colors">
+                            <i class="fas fa-book-reader text-red-500 text-lg mb-2"></i>
+                            <h4 class="text-white font-bold text-sm mb-1">小红书</h4>
+                            <p class="text-[10px] text-slate-500">适老科普 · 实景展示 · 暖心故事</p>
+                        </div>
+                        <div class="p-4 bg-white/5 rounded-xl border border-white/5 hover:border-secondary/30 transition-colors">
+                            <i class="fab fa-tiktok text-secondary text-lg mb-2"></i>
+                            <h4 class="text-white font-bold text-sm mb-1">抖音/视频号</h4>
+                            <p class="text-[10px] text-slate-500">操作实拍 · 预警演示 · 病房场景</p>
+                        </div>
+                        <div class="p-4 bg-white/5 rounded-xl border border-white/5 hover:border-accent/30 transition-colors">
+                            <i class="fas fa-graduation-cap text-accent text-lg mb-2"></i>
+                            <h4 class="text-white font-bold text-sm mb-1">学术平台</h4>
+                            <p class="text-[10px] text-slate-500">SHWID 论文 · 医疗 AI 专栏</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="business" class="py-32 tech-grid relative reveal overflow-hidden">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-24">
@@ -780,6 +1155,69 @@
                     <div class="text-yellow-500 font-tech font-bold text-lg mb-4">04. 赋能扩展</div>
                     <h4 class="text-white font-bold mb-3">技术授权与培训</h4>
                     <p class="text-xs text-slate-400 leading-relaxed mb-4">对外输出 MAPFM API 接口 (10-50万/年)。开展智能护理人员分级认证专业培训 (1800-6800元/人)。</p>
+                </div>
+            </div>
+
+            <h3 class="text-2xl font-bold text-white mb-8 text-center mt-24">全链条协同体系</h3>
+            <div class="glass-card p-10 rounded-[3rem] mb-16">
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div class="p-6 bg-white/5 rounded-2xl border border-white/5 hover:border-primary/30 transition-colors">
+                        <div class="w-14 h-14 mx-auto bg-primary/10 rounded-full flex items-center justify-center text-primary text-xl mb-4"><i class="fas fa-cubes"></i></div>
+                        <h4 class="text-white font-bold mb-2">上游资源整合</h4>
+                        <p class="text-xs text-slate-400">芯片/传感器/机械臂供应链 + 医疗数据 + 高校科研合作</p>
+                    </div>
+                    <div class="p-6 bg-white/5 rounded-2xl border border-white/5 hover:border-accent/30 transition-colors relative">
+                        <div class="hidden md:block absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-darkbg border border-white/10 rounded-full flex items-center justify-center"><i class="fas fa-arrow-right text-primary text-xs"></i></div>
+                        <div class="hidden md:block absolute right-0 top-1/2 translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-darkbg border border-white/10 rounded-full flex items-center justify-center"><i class="fas fa-arrow-right text-primary text-xs"></i></div>
+                        <div class="w-14 h-14 mx-auto bg-accent/10 rounded-full flex items-center justify-center text-accent text-xl mb-4"><i class="fas fa-cogs"></i></div>
+                        <h4 class="text-white font-bold mb-2">中游价值创造</h4>
+                        <p class="text-xs text-slate-400">MAPFM 算法研发 + 机器人制造 + 系统集成 + 服务标准化</p>
+                    </div>
+                    <div class="p-6 bg-white/5 rounded-2xl border border-white/5 hover:border-secondary/30 transition-colors">
+                        <div class="w-14 h-14 mx-auto bg-secondary/10 rounded-full flex items-center justify-center text-secondary text-xl mb-4"><i class="fas fa-store"></i></div>
+                        <h4 class="text-white font-bold mb-2">下游市场落地</h4>
+                        <p class="text-xs text-slate-400">医院/康养机构落地 + 客户运营 + 数据增值 + 生态拓展</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-2xl font-bold text-white mb-8 text-center">三元闭环服务体系</h3>
+            <div class="glass-card p-10 rounded-[3rem] mb-16 border border-primary/20">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center group">
+                        <div class="w-20 h-20 mx-auto bg-gradient-to-br from-primary/20 to-primary/5 rounded-full flex items-center justify-center text-primary text-3xl mb-4 group-hover:scale-110 transition-transform border border-primary/30"><i class="fas fa-brain"></i></div>
+                        <h4 class="text-white font-bold text-lg mb-2">AI 中枢决策</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">MAPFM 多智能体预警、个性化方案生成、智能调度决策</p>
+                    </div>
+                    <div class="text-center group">
+                        <div class="w-20 h-20 mx-auto bg-gradient-to-br from-accent/20 to-accent/5 rounded-full flex items-center justify-center text-accent text-3xl mb-4 group-hover:scale-110 transition-transform border border-accent/30"><i class="fas fa-robot"></i></div>
+                        <h4 class="text-white font-bold text-lg mb-2">机器人执行</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">翻身、喂食、监测、照护操作自动化执行</p>
+                    </div>
+                    <div class="text-center group">
+                        <div class="w-20 h-20 mx-auto bg-gradient-to-br from-secondary/20 to-secondary/5 rounded-full flex items-center justify-center text-secondary text-3xl mb-4 group-hover:scale-110 transition-transform border border-secondary/30"><i class="fas fa-user-nurse"></i></div>
+                        <h4 class="text-white font-bold text-lg mb-2">护工协同管理</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">高难度护理、人文关怀、应急处理、质量监管</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-2xl font-bold text-white mb-8 text-center">三大核心运营模式</h3>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="glass-card p-8 rounded-3xl border-t-2 border-primary hover:border-primary/80 transition-colors">
+                    <div class="text-primary font-tech font-bold text-sm mb-4 tracking-widest">MODE 01</div>
+                    <h4 class="text-white font-bold mb-3">技术运营</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed">自主研发+联合落地。核心技术自主掌控，硬件 OEM 代工，医院联合试点，快速迭代验证。</p>
+                </div>
+                <div class="glass-card p-8 rounded-3xl border-t-2 border-accent hover:border-accent/80 transition-colors">
+                    <div class="text-accent font-tech font-bold text-sm mb-4 tracking-widest">MODE 02</div>
+                    <h4 class="text-white font-bold mb-3">市场运营</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed">标杆试点→区域复制→全国拓展。山东标杆→全省复制→全国扩张，标准化落地快速占领市场。</p>
+                </div>
+                <div class="glass-card p-8 rounded-3xl border-t-2 border-secondary hover:border-secondary/80 transition-colors">
+                    <div class="text-secondary font-tech font-bold text-sm mb-4 tracking-widest">MODE 03</div>
+                    <h4 class="text-white font-bold mb-3">服务运营</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed">人机协同+标准化管控。1 名 AI 调度员 + N 名护工 + M 台机器人，服务半径提升 3 倍，效率提升 80%。</p>
                 </div>
             </div>
         </div>
@@ -875,6 +1313,71 @@
                     <span class="flex items-center gap-2"><i class="fas fa-level-up-alt text-accent"></i> 全周期动态 IRR: 45.8% (远超行业基准)</span>
                 </div>
             </div>
+
+            <h3 class="text-2xl font-bold text-white mb-8 text-center mt-24"><i class="fas fa-tachometer-alt text-primary mr-3"></i>全链路财务健康度分析</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                <div class="glass-card p-6 rounded-3xl text-center border-t-2 border-primary">
+                    <div class="text-3xl font-black font-tech text-white mb-1">12.8<span class="text-sm text-primary">万</span></div>
+                    <div class="text-[10px] text-slate-500 uppercase tracking-widest">单床年化综合收入</div>
+                </div>
+                <div class="glass-card p-6 rounded-3xl text-center border-t-2 border-secondary">
+                    <div class="text-3xl font-black font-tech text-white mb-1">18<span class="text-sm text-secondary">个月</span></div>
+                    <div class="text-[10px] text-slate-500 uppercase tracking-widest">单院静态回本周期</div>
+                </div>
+                <div class="glass-card p-6 rounded-3xl text-center border-t-2 border-accent">
+                    <div class="text-3xl font-black font-tech text-white mb-1">78.2<span class="text-sm text-accent">%</span></div>
+                    <div class="text-[10px] text-slate-500 uppercase tracking-widest">稳态边际毛利率</div>
+                </div>
+                <div class="glass-card p-6 rounded-3xl text-center border-t-2 border-yellow-500">
+                    <div class="text-3xl font-black font-tech text-white mb-1">24<span class="text-sm text-yellow-500">个月</span></div>
+                    <div class="text-[10px] text-slate-500 uppercase tracking-widest">正向现金流节点</div>
+                </div>
+            </div>
+
+            <div class="glass-card p-10 rounded-[3rem] mb-16">
+                <h4 class="text-lg font-bold text-white mb-6 flex items-center gap-3"><i class="fas fa-bed text-primary"></i> 单床全生命周期盈利模型</h4>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="p-6 bg-white/5 rounded-2xl border border-white/5">
+                        <div class="text-primary font-tech font-bold text-sm mb-3">导入期 (0-3月)</div>
+                        <p class="text-sm text-slate-400">投入 <span class="text-white font-bold">3.2 万/床</span>，完成临床验证</p>
+                    </div>
+                    <div class="p-6 bg-white/5 rounded-2xl border border-white/5">
+                        <div class="text-secondary font-tech font-bold text-sm mb-3">成长期 (4-12月)</div>
+                        <p class="text-sm text-slate-400">月均收入 <span class="text-white font-bold">1.05 万/床</span>，累计盈利 5.1 万/床</p>
+                    </div>
+                    <div class="p-6 bg-white/5 rounded-2xl border border-white/5">
+                        <div class="text-accent font-tech font-bold text-sm mb-3">成熟期 (13-60月)</div>
+                        <p class="text-sm text-slate-400">月均收入 <span class="text-white font-bold">1.2 万/床</span>，累计盈利 62.5 万/床</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card p-10 rounded-[3rem]">
+                <h4 class="text-lg font-bold text-white mb-6 flex items-center gap-3"><i class="fas fa-shield-alt text-secondary"></i> 三重财务安全边际</h4>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="flex items-start gap-4">
+                        <i class="fas fa-piggy-bank text-primary text-xl mt-1"></i>
+                        <div>
+                            <h5 class="text-white font-bold text-sm mb-1">现金流安全垫</h5>
+                            <p class="text-xs text-slate-400">预留 6 个月固定运营资金</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <i class="fas fa-layer-group text-accent text-xl mt-1"></i>
+                        <div>
+                            <h5 class="text-white font-bold text-sm mb-1">收入多元化</h5>
+                            <p class="text-xs text-slate-400">非硬件收入占比逐年提升至 85%</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <i class="fas fa-file-invoice-dollar text-secondary text-xl mt-1"></i>
+                        <div>
+                            <h5 class="text-white font-bold text-sm mb-1">应收账款管控</h5>
+                            <p class="text-xs text-slate-400">账期 ≤30 天，坏账率 &lt; 0.5%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -917,6 +1420,52 @@
                         <h4 class="text-xl font-bold text-white mb-3">规模复制与区域霸主</h4>
                         <p class="text-sm text-slate-400 leading-relaxed">取得二类医疗器械注册，完成 A 轮 3000 万融资。全面覆盖山东省 15+ 三甲医院，市场占有率达 35%，实现公司整体盈亏平衡。</p>
                     </div>
+                </div>
+            </div>
+
+            <h3 class="text-2xl font-bold text-white mb-8 text-center mt-20">战略蓝图六大核心方向</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="glass-card p-6 rounded-3xl border-l-2 border-primary hover:bg-primary/5 transition-colors">
+                    <div class="flex items-center gap-3 mb-3">
+                        <i class="fas fa-landmark text-primary"></i>
+                        <h4 class="text-white font-bold text-sm">政策赛道卡位</h4>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">响应十五五规划，牵头制定 AI 护理行业标准，践行双碳目标，年减碳 10 吨/院</p>
+                </div>
+                <div class="glass-card p-6 rounded-3xl border-l-2 border-accent hover:bg-accent/5 transition-colors">
+                    <div class="flex items-center gap-3 mb-3">
+                        <i class="fas fa-microchip text-accent"></i>
+                        <h4 class="text-white font-bold text-sm">技术路线迭代</h4>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">1.0 基础落地→2.0 罕见病适配+联邦学习→3.0 开放生态全场景覆盖</p>
+                </div>
+                <div class="glass-card p-6 rounded-3xl border-l-2 border-secondary hover:bg-secondary/5 transition-colors">
+                    <div class="flex items-center gap-3 mb-3">
+                        <i class="fas fa-globe-asia text-secondary"></i>
+                        <h4 class="text-white font-bold text-sm">市场扩张三步走</h4>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">山东深耕 (市占 35%) → 全国复制 (50+ 医院) → 出海探索 (一带一路)</p>
+                </div>
+                <div class="glass-card p-6 rounded-3xl border-l-2 border-yellow-500 hover:bg-yellow-500/5 transition-colors">
+                    <div class="flex items-center gap-3 mb-3">
+                        <i class="fas fa-handshake text-yellow-500"></i>
+                        <h4 class="text-white font-bold text-sm">商业生态闭环</h4>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">校企实验室 + AI 护理师认证 + 居家照护服务包</p>
+                </div>
+                <div class="glass-card p-6 rounded-3xl border-l-2 border-red-500 hover:bg-red-500/5 transition-colors">
+                    <div class="flex items-center gap-3 mb-3">
+                        <i class="fas fa-hand-holding-heart text-red-500"></i>
+                        <h4 class="text-white font-bold text-sm">社会价值升级</h4>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">5 年创造 500+ 直接岗位、3000+ 间接岗位，护理投诉率下降 80%</p>
+                </div>
+                <div class="glass-card p-6 rounded-3xl border-l-2 border-danger hover:bg-danger/5 transition-colors">
+                    <div class="flex items-center gap-3 mb-3">
+                        <i class="fas fa-shield-alt text-danger"></i>
+                        <h4 class="text-white font-bold text-sm">风险保障</h4>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">技术迭代、市场竞争、合规落地全维度风险对冲</p>
                 </div>
             </div>
         </div>
@@ -1493,7 +2042,7 @@
             }
 
             // 侧边栏点位联动
-            const sections = ['home', 'crisis', 'tech', 'mapfm-diagram', 'advantage', 'product', 'validation', 'business', 'finance', 'roadmap', 'risk', 'social', 'team', 'ip'];
+            const sections = ['home', 'crisis', 'pest', 'tech', 'mapfm-diagram', 'future-tech', 'advantage', 'product', 'disease', 'validation', 'brand', 'business', 'finance', 'roadmap', 'risk', 'social', 'team', 'ip'];
             const dots = document.querySelectorAll('.side-nav-dot');
             sections.forEach((id, index) => {
                 const el = document.getElementById(id);
