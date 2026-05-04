@@ -260,6 +260,76 @@
         
         .swiper-pagination-bullet { background: rgba(255,255,255,0.5); }
         .swiper-pagination-bullet-active { background: #00E5FF; box-shadow: 0 0 10px #00E5FF;}
+
+        /* ====== 动态箭头动画系统 ====== */
+        @keyframes arrowBounce {
+            0%, 100% { transform: translateX(0); opacity: 0.6; }
+            50% { transform: translateX(6px); opacity: 1; }
+        }
+        @keyframes arrowPulseRight {
+            0% { transform: translateX(-4px); opacity: 0.3; }
+            50% { transform: translateX(4px); opacity: 1; }
+            100% { transform: translateX(-4px); opacity: 0.3; }
+        }
+        @keyframes arrowFlowDown {
+            0% { transform: translateY(-3px); opacity: 0.4; }
+            50% { transform: translateY(3px); opacity: 1; }
+            100% { transform: translateY(-3px); opacity: 0.4; }
+        }
+        @keyframes arrowGrowRight {
+            0% { width: 0; opacity: 0; }
+            50% { width: 100%; opacity: 1; }
+            100% { width: 0; opacity: 0; }
+        }
+        @keyframes dashFlow {
+            to { stroke-dashoffset: -20; }
+        }
+        .arrow-bounce { display: inline-block; animation: arrowBounce 1.2s ease-in-out infinite; }
+        .arrow-pulse { display: inline-block; animation: arrowPulseRight 1.5s ease-in-out infinite; }
+        .arrow-flow-down { display: inline-block; animation: arrowFlowDown 1.5s ease-in-out infinite; }
+
+        .dynamic-arrow-line {
+            position: relative; display: flex; align-items: center; justify-content: center;
+            gap: 4px; padding: 6px 0;
+        }
+        .dynamic-arrow-line .arrow-shaft {
+            height: 2px; width: 40px; position: relative; overflow: hidden;
+            background: rgba(0, 229, 255, 0.15); border-radius: 2px;
+        }
+        .dynamic-arrow-line .arrow-shaft::after {
+            content: ''; position: absolute; top: 0; left: 0;
+            height: 100%; width: 100%; border-radius: 2px;
+            background: linear-gradient(90deg, transparent, #00E5FF, transparent);
+            animation: arrowGrowRight 2s ease-in-out infinite;
+        }
+        .dynamic-arrow-line .arrow-head {
+            color: #00E5FF; font-size: 12px;
+            animation: arrowBounce 1.2s ease-in-out infinite;
+        }
+
+        .flow-connector {
+            display: flex; align-items: center; justify-content: center;
+        }
+        .flow-connector svg { overflow: visible; }
+        .flow-connector .flow-path {
+            stroke: #00E5FF; stroke-width: 2; fill: none;
+            stroke-dasharray: 8 4; animation: dashFlow 0.8s linear infinite;
+        }
+        .flow-connector .flow-head {
+            fill: #00E5FF; animation: arrowPulseRight 1.5s ease-in-out infinite;
+        }
+
+        .growth-arrow {
+            display: inline-flex; align-items: center; gap: 4px;
+            color: #36D399; font-size: 11px; font-weight: 700;
+        }
+        .growth-arrow i { animation: arrowFlowDown 1s ease-in-out infinite; transform-origin: center; }
+        .growth-arrow.up i { animation-name: arrowFlowUp; }
+        @keyframes arrowFlowUp {
+            0% { transform: translateY(3px); opacity: 0.4; }
+            50% { transform: translateY(-3px); opacity: 1; }
+            100% { transform: translateY(3px); opacity: 0.4; }
+        }
     </style>
 </head>
 <body class="text-slate-300 antialiased overflow-x-hidden selection:bg-primary selection:text-darkbg">
@@ -513,35 +583,12 @@
             </div>
 
             <h3 class="text-2xl font-bold text-white mb-10 flex items-center gap-3"><i class="fas fa-chess-board text-accent"></i> 战略格局分析（SWOT 模型）</h3>
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="glass-card p-8 rounded-3xl border-l-4 border-primary group hover:bg-primary/5 transition-colors">
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="px-3 py-1.5 bg-primary/20 text-primary text-xs font-black rounded-lg tracking-widest uppercase">Strengths</span>
-                        <span class="text-white font-bold">核心优势</span>
-                    </div>
-                    <p class="text-sm text-slate-400 leading-relaxed">技术硬核、场景精准、高性价比、跨学科复合团队。自研 MAPFM 算法准确率 81.95%，专为医疗场景优化。</p>
+            <div class="glass-card p-2 md:p-4 rounded-[2rem] border border-accent/30 relative group cursor-pointer" onclick="openImageModal('add/SWOT.jpg')">
+                <div class="absolute inset-0 flex items-center justify-center bg-darkbg/60 opacity-0 group-hover:opacity-100 transition-all rounded-[1.8rem] z-10">
+                    <div class="bg-accent/20 text-accent border border-accent px-6 py-2 rounded-full font-bold flex items-center gap-2"><i class="fas fa-search-plus"></i> 点击全屏查看 SWOT 分析</div>
                 </div>
-                <div class="glass-card p-8 rounded-3xl border-l-4 border-yellow-500 group hover:bg-yellow-500/5 transition-colors">
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="px-3 py-1.5 bg-yellow-500/20 text-yellow-500 text-xs font-black rounded-lg tracking-widest uppercase">Weaknesses</span>
-                        <span class="text-white font-bold">待突破项</span>
-                    </div>
-                    <p class="text-sm text-slate-400 leading-relaxed">品牌新启、医械注册周期长、资金有限、供应链待完善。需加速二类器械注册认证流程。</p>
-                </div>
-                <div class="glass-card p-8 rounded-3xl border-l-4 border-secondary group hover:bg-secondary/5 transition-colors">
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="px-3 py-1.5 bg-secondary/20 text-secondary text-xs font-black rounded-lg tracking-widest uppercase">Opportunities</span>
-                        <span class="text-white font-bold">战略机遇</span>
-                    </div>
-                    <p class="text-sm text-slate-400 leading-relaxed">免陪照护政策红利、市场蓝海渗透率低、技术降本、大学生创业扶持。CAGR 高达 14.2%。</p>
-                </div>
-                <div class="glass-card p-8 rounded-3xl border-l-4 border-danger group hover:bg-danger/5 transition-colors">
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="px-3 py-1.5 bg-danger/20 text-danger text-xs font-black rounded-lg tracking-widest uppercase">Threats</span>
-                        <span class="text-white font-bold">潜在威胁</span>
-                    </div>
-                    <p class="text-sm text-slate-400 leading-relaxed">巨头降维竞争、监管合规严格、供应链波动、技术易被模仿。通过深耕区域护城河有效对冲。</p>
-                </div>
+                <div class="absolute top-4 left-4 z-20 bg-darkbg/80 text-white text-[10px] px-3 py-1 rounded border border-white/20">SWOT + PEST 战略分析图</div>
+                <img src="add/SWOT.jpg" alt="SWOT战略分析图" class="w-full h-auto rounded-[1.8rem] object-contain opacity-90 group-hover:opacity-100 transition-opacity">
             </div>
         </div>
     </section>
@@ -1160,23 +1207,54 @@
 
             <h3 class="text-2xl font-bold text-white mb-8 text-center mt-24">全链条协同体系</h3>
             <div class="glass-card p-10 rounded-[3rem] mb-16">
-                <div class="grid md:grid-cols-3 gap-8 text-center">
+                <!-- 三列内容 -->
+                <div class="grid md:grid-cols-[1fr_auto_1fr_auto_1fr] gap-0 items-start text-center">
+                    <!-- 上游 -->
                     <div class="p-6 bg-white/5 rounded-2xl border border-white/5 hover:border-primary/30 transition-colors">
                         <div class="w-14 h-14 mx-auto bg-primary/10 rounded-full flex items-center justify-center text-primary text-xl mb-4"><i class="fas fa-cubes"></i></div>
                         <h4 class="text-white font-bold mb-2">上游资源整合</h4>
                         <p class="text-xs text-slate-400">芯片/传感器/机械臂供应链 + 医疗数据 + 高校科研合作</p>
                     </div>
-                    <div class="p-6 bg-white/5 rounded-2xl border border-white/5 hover:border-accent/30 transition-colors relative">
-                        <div class="hidden md:block absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-darkbg border border-white/10 rounded-full flex items-center justify-center"><i class="fas fa-arrow-right text-primary text-xs"></i></div>
-                        <div class="hidden md:block absolute right-0 top-1/2 translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-darkbg border border-white/10 rounded-full flex items-center justify-center"><i class="fas fa-arrow-right text-primary text-xs"></i></div>
+                    <!-- 贯穿箭头1：上游 → 中游 -->
+                    <div class="hidden md:flex flex-col items-center justify-center px-2 pt-6 self-center">
+                        <span class="text-[10px] text-primary font-bold mb-1 whitespace-nowrap">供应赋能</span>
+                        <div class="flex items-center gap-1">
+                            <div class="w-10 h-[2px] bg-gradient-to-r from-primary/20 via-primary to-primary/20 relative overflow-hidden rounded">
+                                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/60 to-transparent" style="animation: arrowGrowRight 1.8s ease-in-out infinite"></div>
+                            </div>
+                            <i class="fas fa-chevron-right text-primary text-xs arrow-bounce"></i>
+                        </div>
+                        <span class="text-[9px] text-slate-500 mt-1 whitespace-nowrap">数据+硬件</span>
+                    </div>
+                    <!-- 中游 -->
+                    <div class="p-6 bg-white/5 rounded-2xl border border-white/5 hover:border-accent/30 transition-colors">
                         <div class="w-14 h-14 mx-auto bg-accent/10 rounded-full flex items-center justify-center text-accent text-xl mb-4"><i class="fas fa-cogs"></i></div>
                         <h4 class="text-white font-bold mb-2">中游价值创造</h4>
                         <p class="text-xs text-slate-400">MAPFM 算法研发 + 机器人制造 + 系统集成 + 服务标准化</p>
                     </div>
+                    <!-- 贯穿箭头2：中游 → 下游 -->
+                    <div class="hidden md:flex flex-col items-center justify-center px-2 pt-6 self-center">
+                        <span class="text-[10px] text-accent font-bold mb-1 whitespace-nowrap">产品输出</span>
+                        <div class="flex items-center gap-1">
+                            <div class="w-10 h-[2px] bg-gradient-to-r from-accent/20 via-accent to-accent/20 relative overflow-hidden rounded">
+                                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/60 to-transparent" style="animation: arrowGrowRight 1.8s ease-in-out infinite 0.4s"></div>
+                            </div>
+                            <i class="fas fa-chevron-right text-accent text-xs arrow-bounce"></i>
+                        </div>
+                        <span class="text-[9px] text-slate-500 mt-1 whitespace-nowrap">方案+服务</span>
+                    </div>
+                    <!-- 下游 -->
                     <div class="p-6 bg-white/5 rounded-2xl border border-white/5 hover:border-secondary/30 transition-colors">
                         <div class="w-14 h-14 mx-auto bg-secondary/10 rounded-full flex items-center justify-center text-secondary text-xl mb-4"><i class="fas fa-store"></i></div>
                         <h4 class="text-white font-bold mb-2">下游市场落地</h4>
                         <p class="text-xs text-slate-400">医院/康养机构落地 + 客户运营 + 数据增值 + 生态拓展</p>
+                    </div>
+                </div>
+                <!-- 移动端垂直箭头（仅小屏显示） -->
+                <div class="md:hidden flex flex-col items-center gap-2 -mt-2 mb-2">
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-chevron-down text-primary text-sm arrow-flow-down"></i>
+                        <span class="text-[9px] text-primary font-bold">供应赋能</span>
                     </div>
                 </div>
             </div>
@@ -1284,20 +1362,20 @@
                             <tr class="hover:bg-white/5 transition-colors">
                                 <td class="py-5 text-slate-300 font-sans font-bold">预计营业收入总额</td>
                                 <td class="py-5 text-right">132.0</td>
-                                <td class="py-5 text-right">1020.0</td>
-                                <td class="py-5 text-right text-primary font-bold text-lg">5000.0</td>
+                                <td class="py-5 text-right">1020.0 <span class="growth-arrow up"><i class="fas fa-arrow-up"></i></span></td>
+                                <td class="py-5 text-right text-primary font-bold text-lg">5000.0 <span class="growth-arrow up"><i class="fas fa-arrow-up"></i></span></td>
                             </tr>
                             <tr class="hover:bg-white/5 transition-colors">
                                 <td class="py-5 text-slate-300 font-sans font-bold">归母净利润预期</td>
                                 <td class="py-5 text-right">13.0</td>
-                                <td class="py-5 text-right">267.3</td>
-                                <td class="py-5 text-right text-primary font-bold text-lg">1776.6</td>
+                                <td class="py-5 text-right">267.3 <span class="growth-arrow up"><i class="fas fa-arrow-up"></i></span></td>
+                                <td class="py-5 text-right text-primary font-bold text-lg">1776.6 <span class="growth-arrow up"><i class="fas fa-arrow-up"></i></span></td>
                             </tr>
                             <tr class="hover:bg-white/5 transition-colors">
                                 <td class="py-5 text-slate-300 font-sans font-bold">综合销售净利率</td>
                                 <td class="py-5 text-right text-yellow-500">9.85%</td>
-                                <td class="py-5 text-right text-yellow-500">26.21%</td>
-                                <td class="py-5 text-right text-yellow-500 font-bold">35.53%</td>
+                                <td class="py-5 text-right text-yellow-500">26.21% <span class="growth-arrow up" style="color:#EAB308"><i class="fas fa-arrow-up"></i></span></td>
+                                <td class="py-5 text-right text-yellow-500 font-bold">35.53% <span class="growth-arrow up" style="color:#EAB308"><i class="fas fa-arrow-up"></i></span></td>
                             </tr>
                             <tr class="hover:bg-white/5 transition-colors">
                                 <td class="py-5 text-slate-300 font-sans font-bold">净资产收益率 (ROE)</td>
