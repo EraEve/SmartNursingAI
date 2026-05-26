@@ -7,7 +7,7 @@
 [![MIT License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 [![ACM Published](https://img.shields.io/badge/ACM-SHWID%202025-brightgreen)](https://dl.acm.org/doi/10.1145/3788112.3788145)
 [![National Innovation](https://img.shields.io/badge/国家-大创项目-red)](#)
-[![Challenge Cup](https://img.shields.io/badge/挑战杯-校级金奖-gold)](#)
+[![Challenge Cup](https://img.shields.io/badge/互联网+-校级金奖-gold)](#)
 
 </div>
 
