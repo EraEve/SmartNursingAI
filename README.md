@@ -1,8 +1,8 @@
-# 🏥 智弈护晓 DawnGuard — 智医算
+# 🏥 智弈护晓 DawnGuard — 智护未来 仁济民生
 
 <div align="center">
 
-**多模态感知 & 多智能体博弈驱动的医疗免陪照护智能护理机器人预测系统**
+**基于博弈决策的智能护理预测平台**
 
 [![MIT License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 [![ACM Published](https://img.shields.io/badge/ACM-SHWID%202025-brightgreen)](https://dl.acm.org/doi/10.1145/3788112.3788145)
@@ -115,7 +115,9 @@ python -m http.server 8080
 
 - 🏅 **ACM SHWID 2025** 正式见刊（EI/Scopus 检索）— *MAPFM: A Multi-Agent Retrieval-Augmented Framework for Medical Text Classification*
 - 🏅 **2026 国家级大学生创新创业项目** 立项
-- 🏅 **"挑战杯"** 院级特等奖 / 校级金奖
+- 🏅 **"挑战杯"** 院级特等奖
+- 🏅 **"互联网+"** 校级金奖
+- 🏅 **"服创赛"** 国家奖（已进入复赛）
 - 🏅 国家发明专利 1 项（实质审查阶段）
 - 🏅 软件著作权 3 项
 
