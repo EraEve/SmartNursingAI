@@ -262,6 +262,50 @@
             50% { transform: translateY(-3px); opacity: 1; }
             100% { transform: translateY(3px); opacity: 0.4; }
         }
+
+        /* ====== HMAE 2.0 科技视觉增强系统 ====== */
+        .scan-overlay{position:relative;overflow:hidden;}
+        .scan-overlay::before{
+            content:'';position:absolute;top:-100%;left:0;width:100%;height:100%;
+            background:linear-gradient(to bottom,transparent 0%,rgba(0,229,255,0.06) 50%,transparent 100%);
+            animation:scanSweep 4s linear infinite;pointer-events:none;z-index:5;
+        }
+        @keyframes scanSweep{0%{top:-100%}100%{top:100%}}
+        #particles-canvas{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:2;opacity:.5;}
+        .circuit-border{position:relative;}
+        .circuit-border::before{
+            content:'';position:absolute;top:-1px;left:-1px;right:-1px;bottom:-1px;border-radius:inherit;
+            background:linear-gradient(135deg,rgba(0,229,255,0.3),transparent 40%,transparent 60%,rgba(112,0,255,0.3));
+            z-index:-1;opacity:0;transition:opacity .5s;
+        }
+        .circuit-border:hover::before{opacity:1;}
+        @keyframes neuralPulse{
+            0%,100%{box-shadow:0 0 5px rgba(0,229,255,0.2),0 0 10px rgba(0,229,255,0.1)}
+            50%{box-shadow:0 0 15px rgba(0,229,255,0.5),0 0 30px rgba(0,229,255,0.3),0 0 45px rgba(112,0,255,0.2)}
+        }
+        .neural-pulse{animation:neuralPulse 3s ease-in-out infinite;}
+        @keyframes dataFlowBg{0%{background-position:0% 50%}100%{background-position:200% 50%}}
+        .data-flow-bg{
+            background:linear-gradient(90deg,transparent 0%,rgba(0,229,255,0.03) 25%,rgba(112,0,255,0.05) 50%,rgba(0,229,255,0.03) 75%,transparent 100%);
+            background-size:200% 100%;animation:dataFlowBg 8s linear infinite;
+        }
+        @keyframes digitFall{
+            0%{transform:translateY(-20px);opacity:0}10%{opacity:1}90%{opacity:1}100%{transform:translateY(80px);opacity:0}
+        }
+        .digit-rain span{display:inline-block;animation:digitFall 2.5s ease-in infinite;color:rgba(0,229,255,0.4);font-family:'Orbitron',monospace;font-size:10px;}
+        .glow-text-cyan{text-shadow:0 0 20px rgba(0,229,255,0.4),0 0 40px rgba(0,229,255,0.2),0 0 80px rgba(0,229,255,0.1);}
+        .glow-text-purple{text-shadow:0 0 20px rgba(112,0,255,0.4),0 0 40px rgba(112,0,255,0.2);}
+        @keyframes hologramFlicker{0%,100%{opacity:1}3%{opacity:.8}6%{opacity:1}92%{opacity:1}95%{opacity:.7}}
+        .hologram{animation:hologramFlicker 5s ease-in-out infinite;}
+        .hex-bg{
+            background-color:#020617;
+            background-image:linear-gradient(60deg,rgba(0,229,255,0.03) 1px,transparent 1px),linear-gradient(-60deg,rgba(0,229,255,0.03) 1px,transparent 1px),linear-gradient(0deg,rgba(112,0,255,0.03) 1px,transparent 1px);
+            background-size:40px 69px,40px 69px,69px 40px;
+        }
+        @keyframes indicatorPulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.8);opacity:.3}}
+        .live-indicator{width:8px;height:8px;border-radius:50%;background:#36D399;display:inline-block;animation:indicatorPulse 1.5s ease-in-out infinite;box-shadow:0 0 6px #36D399;}
+        .hover-glow{transition:box-shadow .4s ease;}
+        .hover-glow:hover{box-shadow:0 0 25px rgba(0,229,255,0.25),0 0 50px rgba(0,229,255,0.08),inset 0 0 15px rgba(0,229,255,0.03);}
     </style>
 </head>
 <body class="text-slate-300 antialiased overflow-x-hidden selection:bg-primary selection:text-darkbg">
@@ -290,6 +334,7 @@
         <a href="#risk" class="side-nav-link" title="风险防控"><div class="side-nav-dot"></div></a>
         <a href="#social" class="side-nav-link" title="科技向善"><div class="side-nav-dot"></div></a>
         <a href="#ecosystem" class="side-nav-link" title="创新生态"><div class="side-nav-dot"></div></a>
+        <a href="#timeline" class="side-nav-link" title="迭代历程"><div class="side-nav-dot"></div></a>
         <a href="#team" class="side-nav-link" title="极客团队"><div class="side-nav-dot"></div></a>
         <a href="#ip" class="side-nav-link" title="知识产权"><div class="side-nav-dot"></div></a>
     </div>
@@ -331,9 +376,12 @@
         </div>
     </nav>
 
-    <section id="home" class="relative min-h-screen flex items-center justify-center tech-grid overflow-hidden pt-20">
+    <section id="home" class="relative min-h-screen flex items-center justify-center tech-grid overflow-hidden pt-20 scan-overlay">
+        <canvas id="particles-canvas"></canvas>
         <div class="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-primary/20 rounded-full mix-blend-screen filter blur-[120px] opacity-50 animate-pulse-fast"></div>
         <div class="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-accent/20 rounded-full mix-blend-screen filter blur-[120px] opacity-50" style="animation: pulse 4s infinite alternate;"></div>
+        <div class="absolute top-10 left-10 digit-rain opacity-40 hidden lg:block"><span>0</span><span>1</span><span>0</span><span>1</span><span>1</span></div>
+        <div class="absolute bottom-20 right-20 digit-rain opacity-30 hidden lg:block" style="animation-delay:1.2s"><span>1</span><span>1</span><span>0</span><span>0</span><span>1</span></div>
 
         <div class="max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-16 items-center">
             <div class="reveal">
@@ -537,7 +585,7 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-24">
                 <span class="text-primary font-bold tracking-[0.5em] text-xs uppercase block mb-4 font-tech">Core Algorithm</span>
-                <h2 class="text-4xl md:text-5xl font-black text-white mb-6">自主研发的 <span class="text-gradient">技术护城河</span></h2>
+                <h2 class="text-4xl md:text-5xl font-black text-white mb-6 glow-text-cyan">自主研发的 <span class="text-gradient">技术护城河</span></h2>
                 <div class="w-24 h-1 bg-primary mx-auto rounded-full mb-8"></div>
                 <p class="text-slate-400 max-w-3xl mx-auto leading-relaxed text-lg">
                     专为医疗场景小样本数据设计，融合多智能体博弈协同与多模态非接触感知。
@@ -583,7 +631,7 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex flex-col lg:flex-row items-center gap-16">
                 <div class="lg:w-5/12">
-                    <h2 class="text-3xl md:text-4xl font-black text-white mb-6 leading-snug">MAPFM <span class="text-primary italic">核心引擎透视</span></h2>
+                    <h2 class="text-3xl md:text-4xl font-black text-white mb-6 leading-snug glow-text-cyan">MAPFM <span class="text-primary italic">核心引擎透视</span></h2>
                     <p class="text-slate-400 text-sm leading-loose mb-8">
                         MAPFM 是本项目最核心的技术底座。不同于单通道的大语言模型，我们通过多智能体的对抗博弈，极大降低了医疗决策的"幻觉"，专为临床高危预测设计。
                     </p>
@@ -2417,6 +2465,126 @@
         </div>
     </section>
 
+    <!-- ========== 迭代演进历程 (Iteration Timeline) ========== -->
+    <section id="timeline" class="py-32 bg-[#050B1A] relative reveal overflow-hidden">
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[150px] pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent/5 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-20">
+                <span class="text-primary font-bold tracking-[0.5em] text-xs uppercase block mb-4 font-tech">Iteration Timeline</span>
+                <h2 class="text-4xl md:text-5xl font-black text-white mb-6">HMAE 系统 <span class="text-gradient">迭代演进历程</span></h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full mb-8"></div>
+                <p class="text-slate-400 max-w-3xl mx-auto leading-relaxed">从 v1.0 到 v2.0，MAPFM 架构历经多轮迭代优化，507 项修复与增强铸就今日的医疗级可靠性。</p>
+            </div>
+
+            <div class="relative">
+                <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-primary via-accent to-secondary transform -translate-x-1/2 hidden md:block"></div>
+                <div class="space-y-12">
+                    <!-- v1.0 -->
+                    <div class="relative flex flex-col md:flex-row items-start gap-6 md:gap-12">
+                        <div class="md:w-1/2 md:text-right order-1">
+                            <div class="glass-card p-6 rounded-2xl border-l-4 border-primary hover-glow inline-block text-left max-w-lg">
+                                <div class="flex items-center gap-3 mb-3"><span class="px-3 py-1 bg-primary/20 text-primary text-xs font-black rounded-full font-tech">v1.0</span><span class="text-slate-500 text-xs">2026-04</span><span class="live-indicator"></span></div>
+                                <h4 class="text-white font-bold text-lg mb-2">MAPFM 基础框架发布</h4>
+                                <ul class="text-xs text-slate-400 space-y-1.5">
+                                    <li><i class="fas fa-check-circle text-primary mr-1 text-[10px]"></i> 双智能体 DMA+RAA 合作博弈引擎</li>
+                                    <li><i class="fas fa-check-circle text-primary mr-1 text-[10px]"></i> 多模态非接触感知系统 v1</li>
+                                    <li><i class="fas fa-check-circle text-primary mr-1 text-[10px]"></i> 医疗文本分类精确率 81.95%</li>
+                                    <li><i class="fas fa-check-circle text-primary mr-1 text-[10px]"></i> 端侧 4-bit 量化部署方案</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-[#050B1A] shadow-[0_0_15px_rgba(0,229,255,0.6)] z-10"></div>
+                        <div class="md:w-1/2 order-2"></div>
+                    </div>
+                    <!-- v1.1 -->
+                    <div class="relative flex flex-col md:flex-row items-start gap-6 md:gap-12">
+                        <div class="md:w-1/2 order-2 md:order-2"></div>
+                        <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-accent border-4 border-[#050B1A] shadow-[0_0_15px_rgba(112,0,255,0.6)] z-10"></div>
+                        <div class="md:w-1/2 order-1 md:order-3">
+                            <div class="glass-card p-6 rounded-2xl border-l-4 border-accent hover-glow inline-block text-left max-w-lg">
+                                <div class="flex items-center gap-3 mb-3"><span class="px-3 py-1 bg-accent/20 text-accent text-xs font-black rounded-full font-tech">v1.1</span><span class="text-slate-500 text-xs">2026-05 上旬</span></div>
+                                <h4 class="text-white font-bold text-lg mb-2">P0 关键缺陷修复轮次</h4>
+                                <ul class="text-xs text-slate-400 space-y-1.5">
+                                    <li><i class="fas fa-check-circle text-accent mr-1 text-[10px]"></i> P0 Round 1-4: 20 项关键缺陷全部修复</li>
+                                    <li><i class="fas fa-check-circle text-accent mr-1 text-[10px]"></i> P1 Round 1-2: 14 项核心功能补齐</li>
+                                    <li><i class="fas fa-check-circle text-accent mr-1 text-[10px]"></i> P2 Round 1-2: 12 项架构安全加固</li>
+                                    <li><i class="fas fa-check-circle text-accent mr-1 text-[10px]"></i> P3 优化: 9 项性能与体验提升</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- v1.5 -->
+                    <div class="relative flex flex-col md:flex-row items-start gap-6 md:gap-12">
+                        <div class="md:w-1/2 md:text-right order-1">
+                            <div class="glass-card p-6 rounded-2xl border-l-4 border-secondary hover-glow inline-block text-left max-w-lg">
+                                <div class="flex items-center gap-3 mb-3"><span class="px-3 py-1 bg-secondary/20 text-secondary text-xs font-black rounded-full font-tech">v1.5</span><span class="text-slate-500 text-xs">2026-05 下旬</span><span class="live-indicator"></span></div>
+                                <h4 class="text-white font-bold text-lg mb-2">HMAE 架构升级 + 测试体系</h4>
+                                <ul class="text-xs text-slate-400 space-y-1.5">
+                                    <li><i class="fas fa-check-circle text-secondary mr-1 text-[10px]"></i> TFA 深度集成五智能体协同框架</li>
+                                    <li><i class="fas fa-check-circle text-secondary mr-1 text-[10px]"></i> 分层共识机制 + 多模态融合流程</li>
+                                    <li><i class="fas fa-check-circle text-secondary mr-1 text-[10px]"></i> 71/73 单元/集成测试通过 (97.3%)</li>
+                                    <li><i class="fas fa-check-circle text-secondary mr-1 text-[10px]"></i> 6 模块日志格式统一 + 14 交付物</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-secondary border-4 border-[#050B1A] shadow-[0_0_15px_rgba(54,211,153,0.6)] z-10"></div>
+                        <div class="md:w-1/2 order-2"></div>
+                    </div>
+                    <!-- v2.0 -->
+                    <div class="relative flex flex-col md:flex-row items-start gap-6 md:gap-12">
+                        <div class="md:w-1/2 order-2 md:order-2"></div>
+                        <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-yellow-500 border-4 border-[#050B1A] shadow-[0_0_15px_rgba(234,179,8,0.6)] z-10 animate-pulse"></div>
+                        <div class="md:w-1/2 order-1 md:order-3">
+                            <div class="glass-card p-6 rounded-2xl border-l-4 border-yellow-500 hover-glow inline-block text-left max-w-lg neural-pulse">
+                                <div class="flex items-center gap-3 mb-3"><span class="px-3 py-1 bg-yellow-500/20 text-yellow-500 text-xs font-black rounded-full font-tech">v2.0</span><span class="text-slate-500 text-xs">2026-05-27 当前</span><span class="live-indicator"></span></div>
+                                <h4 class="text-white font-bold text-lg mb-2">HMAE v2.0 最终形态</h4>
+                                <ul class="text-xs text-slate-400 space-y-1.5">
+                                    <li><i class="fas fa-star text-yellow-500 mr-1 text-[10px]"></i> 十大智能体协同决策生态完整落地</li>
+                                    <li><i class="fas fa-star text-yellow-500 mr-1 text-[10px]"></i> 安全测试 10/10 + 性能测试 6/6 全过</li>
+                                    <li><i class="fas fa-star text-yellow-500 mr-1 text-[10px]"></i> 22 类疾病分类 Accuracy 84.03% | F1 85.23%</li>
+                                    <li><i class="fas fa-star text-yellow-500 mr-1 text-[10px]"></i> 15/22 类别完美分类 (F1=1.0), 6/6 核心测试通过</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 关键指标仪表盘 -->
+            <div class="mt-20 grid md:grid-cols-4 gap-6">
+                <div class="glass-card p-6 rounded-2xl text-center neural-pulse hover-glow">
+                    <div class="w-16 h-16 mx-auto bg-primary/10 rounded-full flex items-center justify-center mb-3">
+                        <svg class="w-10 h-10 -rotate-90" viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="8"/><circle cx="60" cy="60" r="52" fill="none" stroke="#00E5FF" stroke-width="8" stroke-linecap="round" stroke-dasharray="327" stroke-dashoffset="52"/></svg>
+                    </div>
+                    <div class="text-2xl font-black font-tech text-white">84.03<span class="text-sm text-primary">%</span></div>
+                    <div class="text-[10px] text-slate-500 mt-1">分类准确率 (22类)</div>
+                </div>
+                <div class="glass-card p-6 rounded-2xl text-center neural-pulse hover-glow" style="animation-delay:0.4s">
+                    <div class="w-16 h-16 mx-auto bg-accent/10 rounded-full flex items-center justify-center mb-3">
+                        <svg class="w-10 h-10 -rotate-90" viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="8"/><circle cx="60" cy="60" r="52" fill="none" stroke="#7000FF" stroke-width="8" stroke-linecap="round" stroke-dasharray="327" stroke-dashoffset="49"/></svg>
+                    </div>
+                    <div class="text-2xl font-black font-tech text-white">85.23<span class="text-sm text-accent">%</span></div>
+                    <div class="text-[10px] text-slate-500 mt-1">加权 F1-Score</div>
+                </div>
+                <div class="glass-card p-6 rounded-2xl text-center neural-pulse hover-glow" style="animation-delay:0.8s">
+                    <div class="w-16 h-16 mx-auto bg-secondary/10 rounded-full flex items-center justify-center mb-3">
+                        <svg class="w-10 h-10 -rotate-90" viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="8"/><circle cx="60" cy="60" r="52" fill="none" stroke="#36D399" stroke-width="8" stroke-linecap="round" stroke-dasharray="327" stroke-dashoffset="9"/></svg>
+                    </div>
+                    <div class="text-2xl font-black font-tech text-white">97.3<span class="text-sm text-secondary">%</span></div>
+                    <div class="text-[10px] text-slate-500 mt-1">测试通过率 (71/73)</div>
+                </div>
+                <div class="glass-card p-6 rounded-2xl text-center neural-pulse hover-glow" style="animation-delay:1.2s">
+                    <div class="w-16 h-16 mx-auto bg-yellow-500/10 rounded-full flex items-center justify-center mb-3">
+                        <svg class="w-10 h-10 -rotate-90" viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="8"/><circle cx="60" cy="60" r="52" fill="none" stroke="#EAB308" stroke-width="8" stroke-linecap="round" stroke-dasharray="327" stroke-dashoffset="0"/></svg>
+                    </div>
+                    <div class="text-2xl font-black font-tech text-white">10/10</div>
+                    <div class="text-[10px] text-slate-500 mt-1">安全测试全通过</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="team" class="py-32 tech-grid relative reveal border-t border-white/5">
         <div class="max-w-[90rem] mx-auto px-6">
             <div class="text-center mb-24">
@@ -2814,6 +2982,38 @@
 
     <script>
         /* ============================================
+           0. 粒子画布系统 (Particle Canvas)
+           ============================================ */
+        (function(){
+            const canvas=document.getElementById('particles-canvas');
+            if(!canvas)return;
+            const ctx=canvas.getContext('2d');
+            let particles=[],animId;
+            const max=60;
+            function resize(){canvas.width=canvas.offsetWidth;canvas.height=canvas.offsetHeight;}
+            window.addEventListener('resize',resize);
+            class Particle{
+                constructor(){this.reset(true);}
+                reset(init){this.x=Math.random()*canvas.width;this.y=init?Math.random()*canvas.height:canvas.height+10;this.size=Math.random()*1.8+0.4;this.speedY=-(Math.random()*0.5+0.15);this.speedX=(Math.random()-0.5)*0.3;this.opacity=Math.random()*0.5+0.2;this.hue=Math.random()<0.6?187:272;}
+                update(){this.y+=this.speedY;this.x+=this.speedX;if(this.y<-10||this.opacity<=0.02)this.reset(false);this.opacity-=0.0005;}
+                draw(){ctx.beginPath();ctx.arc(this.x,this.y,this.size,0,Math.PI*2);ctx.fillStyle=`hsla(${this.hue},100%,65%,${this.opacity})`;ctx.fill();}
+            }
+            for(let i=0;i<max;i++)particles.push(new Particle());
+            resize();
+            function animate(){
+                ctx.clearRect(0,0,canvas.width,canvas.height);
+                particles.forEach(p=>{p.update();p.draw();});
+                for(let i=0;i<particles.length;i++)for(let j=i+1;j<particles.length;j++){
+                    const dx=particles[i].x-particles[j].x,dy=particles[i].y-particles[j].y;
+                    const dist=Math.sqrt(dx*dx+dy*dy);
+                    if(dist<100){ctx.beginPath();ctx.moveTo(particles[i].x,particles[i].y);ctx.lineTo(particles[j].x,particles[j].y);ctx.strokeStyle=`rgba(0,229,255,${0.06*(1-dist/100)})`;ctx.lineWidth=0.4;ctx.stroke();}
+                }
+                animId=requestAnimationFrame(animate);
+            }
+            animate();
+        })();
+
+        /* ============================================
            智弈护晓 DawnGuard — 统一前端脚本
            合并所有功能，消除重复代码
            ============================================ */
@@ -2856,7 +3056,7 @@
                 nav.classList.add('py-5', 'bg-transparent');
             }
 
-            const sections = ['home', 'crisis', 'pest', 'tech', 'mapfm-diagram', 'agent-ecosystem', 'future-tech', 'advantage', 'data-security', 'product', 'hardware', 'disease', 'validation', 'brand', 'business', 'finance', 'implementation', 'roadmap', 'risk', 'social', 'ecosystem', 'team', 'ip'];
+            const sections = ['home', 'crisis', 'pest', 'tech', 'mapfm-diagram', 'agent-ecosystem', 'future-tech', 'advantage', 'data-security', 'product', 'hardware', 'disease', 'validation', 'brand', 'business', 'finance', 'implementation', 'roadmap', 'risk', 'social', 'ecosystem', 'timeline', 'team', 'ip'];
             const dots = document.querySelectorAll('.side-nav-dot');
             sections.forEach((id, index) => {
                 const el = document.getElementById(id);
